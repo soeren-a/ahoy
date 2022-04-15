@@ -36,7 +36,8 @@ dtu_ser = cfg.get('dtu', 'serial', fallback='99978563412')  # identical to fc22'
 
 # inverter serial numbers
 inv_ser = cfg.get('inverter', 'serial', fallback='') 
-
+if not inv_ser:
+    raise RuntimeError('No Inverter specified') 
 
 f_crc_m = crcmod.predefined.mkPredefinedCrcFun('modbus')
 f_crc8 = crcmod.mkCrcFun(0x101, initCrc=0, xorOut=0)
