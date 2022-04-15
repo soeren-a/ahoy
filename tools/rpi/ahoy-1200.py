@@ -35,7 +35,7 @@ mqtt_client.loop_start()
 dtu_ser = cfg.get('dtu', 'serial', fallback='99978563412')  # identical to fc22's
 
 # inverter serial numbers
-inv_ser = cfg.get('inverter', 'serial', fallback='116171415572') 
+inv_ser = cfg.get('inverter', 'serial', fallback='') 
 
 
 f_crc_m = crcmod.predefined.mkPredefinedCrcFun('modbus')
